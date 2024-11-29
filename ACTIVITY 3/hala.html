@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Size Adjuster</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif; /* Font style */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000; /* Black background */
+            color: #FFD700; /* Yellow text */
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+            width: 300px;
+        }
+        h2 {
+            color: #FFD700; /* Yellow text for header */
+            margin-bottom: 20px;
+        }
+        #text {
+            font-size: 16px;
+            color: #FFD700; /* Yellow text color inside the paragraph */
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            margin: 5px;
+            background-color: #FFD700; /* Yellow background */
+            color: #000; /* Black text */
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #FFC300; /* Darker yellow on hover */
+        }
+        .app {
+            display: block; /* Makes it appear below the buttons */
+            margin: 20px auto 0; /* Center-align and add space from buttons */
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            background-color: #FFD700; /* Yellow background */
+            color: #000; /* Black text */
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .app:hover {
+            background-color: #FFC300; /* Darker yellow on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Font Size Adjuster</h2>
+    <p id="text">This is a sample paragraph. Click the buttons to change its font size.</p>
+    <button onclick="increaseFontSize()">Increase Font Size</button>
+    <button onclick="decreaseFontSize()">Decrease Font Size</button>
+    <a href="app.html" class="app">MDAS</a>
+</div>
+
+<script>
+function increaseFontSize() {
+    let text = document.getElementById("text");
+    let currentSize = parseFloat(window.getComputedStyle(text).fontSize);
+    text.style.fontSize = (currentSize + 2) + "px";
+}
+
+function decreaseFontSize() {
+    let text = document.getElementById("text");
+    let currentSize = parseFloat(window.getComputedStyle(text).fontSize);
+    text.style.fontSize = (currentSize - 2) + "px";
+}
+</script>
+
+</body>
+</html>
